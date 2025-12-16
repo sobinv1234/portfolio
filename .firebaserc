@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "demo-portfolio",
+    "staging": "sobin-portfolio"
+  },
+  "targets": {},
+  "etags": {}
+}

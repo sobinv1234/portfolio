@@ -1,0 +1,117 @@
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>{{ name }}</h1>
+    <p class="job-title">{{ title }}</p>
+    <div class="contact-info">
+      <span>📍 {{ location }}</span>
+      <span>📱 {{ phone }}</span>
+      <span>📧 {{ email }}</span>
+      <a href="{{ linkedin }}" target="_blank" class="linkedin-link">LinkedIn</a>
+    </div>
+    <div class="cta-buttons">
+      <a href="/contact" class="btn btn-primary">Get in Touch</a>
+      <a href="https://github.com" target="_blank" class="btn btn-secondary">View Projects</a>
+    </div>
+  </div>
+</section>
+
+<!-- Summary Section -->
+<section class="summary">
+  <div class="container">
+    <h2>Professional Summary</h2>
+    <p>{{ summary }}</p>
+  </div>
+</section>
+
+<!-- Core Competencies -->
+<section class="competencies">
+  <div class="container">
+    <h2>Core Competencies</h2>
+    <div class="skills-grid">
+      @for (skill of skills; track skill) {
+        <div class="skill-badge">{{ skill }}</div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Work Experience -->
+<section class="experience">
+  <div class="container">
+    <h2>Work Experience</h2>
+    @for (job of experience; track job.company) {
+      <div class="experience-card">
+        <div class="experience-header">
+          <h3>{{ job.position }}</h3>
+          <span class="period">{{ job.period }}</span>
+        </div>
+        <p class="company">{{ job.company }} • {{ job.location }}</p>
+        <ul class="highlights">
+          @for (highlight of job.highlights; track highlight) {
+            <li>{{ highlight }}</li>
+          }
+        </ul>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- Projects -->
+<section class="projects">
+  <div class="container">
+    <h2>Featured Projects</h2>
+    @for (project of projects; track project.name) {
+      <div class="project-card">
+        <h3>{{ project.name }}</h3>
+        <div class="project-meta">
+          <span class="role">{{ project.role }}</span>
+          <span class="period">{{ project.period }}</span>
+        </div>
+        <p class="tech">Tech: {{ project.tech }}</p>
+        <p class="description">{{ project.description }}</p>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- Education -->
+<section class="education">
+  <div class="container">
+    <h2>Education</h2>
+    @for (edu of education; track edu.degree) {
+      <div class="education-card">
+        <h3>{{ edu.degree }}</h3>
+        <p class="school">{{ edu.school }}</p>
+        <span class="year">{{ edu.year }}</span>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- Achievements -->
+<section class="achievements">
+  <div class="container">
+    <h2>Key Achievements</h2>
+    <ul class="achievement-list">
+      @for (achievement of achievements; track achievement) {
+        <li>{{ achievement }}</li>
+      }
+    </ul>
+  </div>
+</section>
+
+<!-- Languages -->
+<section class="languages">
+  <div class="container">
+    <h2>Languages</h2>
+    <div class="language-list">
+      @for (lang of languages; track lang.language) {
+        <div class="language-item">
+          <h3>{{ lang.language }}</h3>
+          <span class="proficiency">{{ lang.proficiency }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>
