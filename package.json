@@ -10,7 +10,9 @@
     "serve:ssr:portfolio": "node dist/portfolio/server/server.mjs",
     "emulate:firebase": "firebase emulators:start sobin-portfolio",
     "deploy": "firebase deploy sobin-portfolio",
-    "deploy:functions": "firebase deploy --only functions sobin-portfolio"
+    "deploy:functions": "firebase deploy --only functions sobin-portfolio",
+    "build:ssr": "ng build && ng run portfolio:server",
+    "serve:ssr": "node dist/portfolio/server/main.js"
   },
   "prettier": {
     "printWidth": 100,
